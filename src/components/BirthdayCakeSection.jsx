@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Flame, Mic, AlertCircle } from 'lucide-react';
+import { birthdayData } from '../config/birthdayData';
 import { triggerFireworks, playPopSound } from '../utils/effects';
 
 export default function BirthdayCakeSection({ onNextPage }) {
@@ -11,6 +12,9 @@ export default function BirthdayCakeSection({ onNextPage }) {
   const audioCtxRef = useRef(null);
   const streamRef = useRef(null);
   const animFrameRef = useRef(null);
+
+  // Parse age digits for number candles (e.g. "24" -> ['2', '4'] or "23" -> ['2', '3'])
+  const ageDigits = (birthdayData.birthdayGirl.age || "24").toString().split('');
 
   // Clean up audio stream when unmounting or candles blown
   const stopMicrophone = () => {
@@ -106,7 +110,7 @@ export default function BirthdayCakeSection({ onNextPage }) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
         <h2 className="font-serif text-3xl md:text-5xl font-bold text-rose-950 mb-6">
-          Blow Out Your Birthday Candles! 🌬️🎂
+          {birthdayData.birthdayGirl.cakeTitle || "Blow Out Your Birthday Candles! 🌬️🎂"}
         </h2>
 
         {/* Real Microphone Status Bar */}
@@ -129,28 +133,31 @@ export default function BirthdayCakeSection({ onNextPage }) {
           </div>
         )}
 
-        {/* Cake Container */}
+        {/* Cake Container with Number Candles */}
         <div
           onClick={candlesBlown ? null : extinguishCandles}
           className="relative max-w-xs mx-auto my-8 flex flex-col items-center justify-center cursor-pointer group"
           title="Click to blow candles manually if mic is off"
         >
-          {/* Candle Flames */}
-          <div className="flex space-x-6 mb-1 z-10">
-            {[1, 2, 3].map((id) => (
-              <div key={id} className="relative flex flex-col items-center">
-                {/* Flame */}
+          {/* NUMBER CANDLES (e.g. 2 and 4 or 2 and 3) */}
+          <div className="flex space-x-4 mb-1 z-10 items-end">
+            {ageDigits.map((digit, idx) => (
+              <div key={idx} className="relative flex flex-col items-center">
+                {/* Flame on top of number */}
                 {!candlesBlown ? (
-                  <div className={`w-5 h-8 bg-gradient-to-t from-amber-500 via-yellow-400 to-amber-200 rounded-full animate-flame shadow-lg shadow-amber-500/80 flex items-center justify-center transition-transform ${
+                  <div className={`w-5 h-7 bg-gradient-to-t from-amber-500 via-yellow-400 to-amber-200 rounded-full animate-flame shadow-lg shadow-amber-500/80 flex items-center justify-center transition-transform ${
                     isListening && blowLevel > 15 ? 'scale-125 -translate-y-1' : ''
                   }`}>
                     <Flame className="w-3 h-3 text-red-600 animate-pulse" />
                   </div>
                 ) : (
-                  <div className="w-2 h-4 bg-slate-400/40 rounded-full animate-ping opacity-50" />
+                  <div className="w-2 h-3 bg-slate-400/40 rounded-full animate-ping opacity-50 mb-1" />
                 )}
-                {/* Candle Stick */}
-                <div className="w-3 h-10 bg-gradient-to-b from-pink-300 to-rose-400 rounded-t-sm shadow-md border-x border-pink-200" />
+
+                {/* Stylized Number Candle Stick */}
+                <div className="w-10 h-14 bg-gradient-to-b from-rose-400 via-pink-500 to-rose-600 text-white font-serif text-2xl font-bold rounded-xl shadow-lg border-2 border-white flex items-center justify-center">
+                  {digit}
+                </div>
               </div>
             ))}
           </div>
@@ -158,7 +165,7 @@ export default function BirthdayCakeSection({ onNextPage }) {
           {/* Cake Layer 1 (Top) */}
           <div className="w-44 h-14 bg-gradient-to-r from-pink-400 via-rose-300 to-pink-400 rounded-t-2xl shadow-md border-t-4 border-white flex items-center justify-center relative">
             <span className="text-xs font-bold text-rose-900 uppercase tracking-widest">
-              {candlesBlown ? "🎂 WISH GRANTED!" : "BLOW AIR 🌬️"}
+              {candlesBlown ? "🎂 WISH GRANTED!" : (birthdayData.birthdayGirl.cakeLayerText || "BLOW AIR 🌬️")}
             </span>
           </div>
 

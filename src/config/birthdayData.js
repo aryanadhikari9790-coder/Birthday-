@@ -5,19 +5,25 @@
 // =========================================================================
 
 export const birthdayData = {
-  // 👑 HER DETAILS (Change these to her name and nickname!)
+  // 👑 HER DETAILS (Change these to her name, nickname, and age!)
   birthdayGirl: {
-    name: "My Princess",             // EDIT: Her name (e.g. Punturu / Princess)
+    name: "My Princess",             // EDIT: Her name
     nickname: "Babe",                 // EDIT: Her nickname
-    age: "24",                        // EDIT: Her age
+    age: "24",                        // EDIT: Her age (e.g. 24 or 23 - candles will automatically match this number!)
     birthDate: "2026-07-26",          // EDIT: Her birthday date
     
-    // EDIT THIS SUBTITLE TEXT:
-    unboxingSubtitle: "A small try from me to my mutu💖.",
+    // EDIT THIS UNBOXING SUBTITLE TEXT:
+    unboxingSubtitle: " A Small Gift to my Cutiee Pie💖",
     
-    // EDIT THIS BUTTON TEXT BELOW:
-    unboxingButtonText: "Open it My Baby Girl",
-    
+    // EDIT THIS UNBOXING BUTTON TEXT:
+    unboxingButtonText: "Open It My Baby Girl",
+
+    // EDIT THIS CAKE SECTION TITLE TEXT BELOW:
+    cakeTitle: "Blow Out Your Birthday Candles! And Say Bye to Your 23 🌬️🎂",
+
+    // EDIT THIS TEXT ON THE CAKE LAYER:
+    cakeLayerText: "BLOW AIR 🌬️",
+
     favoriteColor: "#f43f5e",
   },
 
