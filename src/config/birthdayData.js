@@ -30,7 +30,7 @@ export const birthdayData = {
     },
     {
       id: 2,
-      title: "Cozy Memories 🌟",
+      title: "Birthday Queen 👑",
       image: "/photo2.jpg",
       caption: "Out of all the stars in the night sky, you shine the brightest."
     },
@@ -38,11 +38,11 @@ export const birthdayData = {
       id: 3,
       title: "Our Goofy Moments 🤪",
       image: "/photo3.jpg",
-      caption: "I love being silly with you and laughing until our stomachs hurt."
+      caption: "One of the funny memories of our journey"
     },
     {
       id: 4,
-      title: "Birthday Queen 👑",
+      title: "Cozy Memories 🌟",
       image: "/photo4.jpg",
       caption: "Happy Birthday to the girl who stole my heart forever."
     },
@@ -50,7 +50,7 @@ export const birthdayData = {
       id: 5,
       title: "Unforgettable Days 🌸",
       image: "/photo5.jpg",
-      caption: "Holding your hand and walking beside you is my favorite place."
+      caption: "our first outing, one of the special day i never want to forget."
     },
     {
       id: 6,
@@ -60,9 +60,9 @@ export const birthdayData = {
     },
     {
       id: 7,
-      title: "Sunset Magic 🌌",
+      title: "Slay Queen",
       image: "/photo7.jpg",
-      caption: "Every sunset is more beautiful when shared with you."
+      caption: " Mero maya 💕."
     },
     {
       id: 8,
@@ -78,11 +78,10 @@ export const birthdayData = {
     salutation: "To My Dearest & Most Special Girl,",
     paragraphs: [
       "Happy Birthday, my love! Today is all about celebrating the day the world was blessed with your wonderful presence.",
-      "Looking back at all our memories, laughs, and quiet moments together, I am constantly reminded of how incredibly lucky I am to have you by my side. You bring warmth, kindness, and magic into my life every single day.",
-      "May this birthday bring you as much happiness as you give to everyone around you. I promise to keep loving you, supporting your dreams, and making you smile forever.",
-      "Happy Birthday once again, my gorgeous Queen! 💖🎂✨"
+      " Today you turn 24 baby, July 26 punturu 25 vanthyo 26 raixa birthday😂 mero baby aja bata ek Barsa Budi vayo hai😂🤗😍 sadhai malai timi vanda ma xito budo hunxu vantyo aja bata jhan ek barsa budo vayo😂😜😍hami boleko Maile timlai first choti I love you vaneko😂😘 (25 December ) pani 7 months complete vayexa don’t know yo last ko seven months ma Maile timilai kaile khusi banaye hola kaile sad but my intentions were always to make you feel special and happy. Timi hasda Tyo face ma aaune charm ra glow nai xuttai hunxa so always smile 😊 Timro eye roll 🙄🙄 uff 🤭🫣Timro kunai kunai cute dumb Harkat 🫠 all in k e cute package hau timi thaxa baby🥰😘 Timro persona Timro ada sabma ma fida 🫠🥰😘 Timro cute innocent face ma Tyo smile Timro feakles everything makes you the perfect one . Timi kaile Kai insecure hunxa ni that only your vhram ( word nai birsiye English ma🤭😂) timi sadhai hasnu khusi Rahanu mero puntu and I will always give my best to make you happy. Timlai thaxa Last ko 6-7 months are the best moments of my life and you are the most precious one in those. Birthday wish garda garda kata pugexu feri😂😍 now my baby has grown a year old may this year bring you all the happiness and peace in your life . Mero puntu lai aba Ali Kati responsibility thapiyo hai aba gharkale aja Budi vayau vanxan aja badi kam gara vanxan😂🤗 but never take that to your heart sometimes Risako bela vaneko kura people don’t mean that especially when the family says. Timi life sadhai agi badhnu Timro bucket list ko sabai kura pura garnu, yes we will do those together but just don’t step back in your life achieve all the happiness and the dream you dreamt of.Life ma kaile happy moments aaula kaile Kye kura le Timro man dukhla but I will make sure that I am always with you in you up and downs and will never be the reason for you tears. I will be always be there to make the lemonade from those lemons that life will give to make you the better version of your self . Always give your best to the life as you always do and never give up on you . I will always be your strongest shoulder to lean.  Once again happiest birthday 🎉 🎂 and to my baby❤️ my life 😘my punturu🥰 my princess💖🎂✨"
+      
     ],
     signature: "Forever Yours,",
-    author: "Your Loving Partner ❤️"
+    author: "Your Loving manchild😂 boyfriend ❤️"
   }
 };
