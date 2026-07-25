@@ -13,7 +13,7 @@ export const birthdayData = {
     birthDate: "2026-07-26",          // EDIT: Her birthday date
     
     // EDIT THIS SUBTITLE TEXT:
-    unboxingSubtitle: "I created a special interactive birthday gift filled with memories and love just for you! Tap below to unwrap your gift.",
+    unboxingSubtitle: "A small try from me to my mutu💖.",
     
     // EDIT THIS BUTTON TEXT BELOW:
     unboxingButtonText: "Open it My Baby Girl",
