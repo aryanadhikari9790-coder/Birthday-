@@ -58,7 +58,7 @@ export default function UnboxingModal({ onOpenGift }) {
           className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-bold text-lg shadow-xl shadow-rose-500/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center space-x-2"
         >
           <Heart className="w-5 h-5 fill-white" />
-          <span>{isOpening ? "Unwrapping Gift..." : "Open My Birthday Gift"}</span>
+          <span>{isOpening ? "Unwrapping Gift..." : (birthdayData.birthdayGirl.unboxingButtonText || "Open My Birthday Gift")}</span>
         </button>
       </div>
     </div>
