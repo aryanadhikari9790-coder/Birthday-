@@ -16,7 +16,7 @@ export const birthdayData = {
     unboxingSubtitle: "I created a special interactive birthday gift filled with memories and love just for you! Tap below to unwrap your gift.",
     
     // EDIT THIS BUTTON TEXT BELOW:
-    unboxingButtonText: "Open My Birthday Gift",
+    unboxingButtonText: "Open it My Baby Girl",
     
     favoriteColor: "#f43f5e",
   },
