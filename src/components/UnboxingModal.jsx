@@ -13,21 +13,18 @@ export default function UnboxingModal({ onOpenGift }) {
 
     setTimeout(() => {
       onOpenGift();
-    }, 1200);
+    }, 1000);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-rose-950/35 backdrop-blur-xl transition-all duration-700">
-      {/* Background Floating Glow */}
-      <div className="absolute w-96 h-96 bg-rose-300/40 rounded-full filter blur-3xl animate-pulse" />
-
-      <div className={`relative max-w-md w-full glass-card p-8 rounded-3xl text-center border-rose-300 shadow-2xl transform transition-all duration-700 ${
+    <div className="min-h-screen flex items-center justify-center p-4 relative z-10">
+      <div className={`relative max-w-md w-full glass-card p-8 md:p-10 rounded-3xl text-center border-rose-300 shadow-2xl transform transition-all duration-700 ${
         isOpening ? 'scale-110 opacity-0 -translate-y-12' : 'scale-100 opacity-100'
       }`}>
         {/* Animated Badge */}
         <div className="inline-flex items-center space-x-2 bg-rose-500/10 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
           <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>A Special Digital Gift For You</span>
+          <span>Page 1 • A Special Digital Gift</span>
         </div>
 
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-rose-950 mb-2">
@@ -38,7 +35,7 @@ export default function UnboxingModal({ onOpenGift }) {
         </h2>
 
         <p className="text-slate-600 text-sm mb-8 font-medium">
-          I created a special interactive gift filled with memories, wishes, and love just for you! Tap below to open your present.
+          I created a special interactive birthday gift filled with memories and love just for you! Tap below to unwrap your gift.
         </p>
 
         {/* 3D Gift Box Visual */}
