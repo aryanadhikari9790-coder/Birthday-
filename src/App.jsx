@@ -45,7 +45,6 @@ export default function App() {
       {/* Main Container */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar
-          kissCount={0}
           isPlayingMusic={isPlayingMusic}
           toggleMusic={toggleMusic}
         />

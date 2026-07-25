@@ -2,7 +2,7 @@ import React from 'react';
 import { Heart, Music } from 'lucide-react';
 import { birthdayData } from '../config/birthdayData';
 
-export default function Navbar({ kissCount, isPlayingMusic, toggleMusic }) {
+export default function Navbar({ isPlayingMusic, toggleMusic }) {
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 border-b border-rose-200/80 px-4 py-3 shadow-sm">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -18,25 +18,21 @@ export default function Navbar({ kissCount, isPlayingMusic, toggleMusic }) {
           </div>
         </div>
 
-        {/* Kiss Counter & Music Toggle */}
+        {/* Music Toggle Button */}
         <div className="flex items-center space-x-3">
-          {/* Kiss Badge */}
-          <div className="flex items-center space-x-1.5 bg-rose-500/10 border border-rose-300 px-3 py-1.5 rounded-full text-xs font-semibold text-rose-700 shadow-sm">
-            <span className="text-base animate-bounce-soft">💋</span>
-            <span>{kissCount} Kisses Collected</span>
-          </div>
-
-          {/* Music Toggle Button */}
           <button
             onClick={toggleMusic}
-            className={`p-2 rounded-full border transition-all duration-300 ${
+            className={`p-2.5 rounded-full border transition-all duration-300 flex items-center space-x-2 ${
               isPlayingMusic
                 ? 'bg-rose-500 text-white border-rose-400 shadow-md shadow-rose-500/30 animate-pulse'
                 : 'bg-rose-100 text-rose-700 border-rose-200 hover:bg-rose-200'
             }`}
-            title={isPlayingMusic ? "Pause Romantic Music" : "Play Romantic Music"}
+            title={isPlayingMusic ? "Pause Music" : "Play Music"}
           >
             <Music className="w-4 h-4" />
+            <span className="text-xs font-bold hidden sm:inline">
+              {isPlayingMusic ? "Playing Music 🎵" : "Play Music 🎵"}
+            </span>
           </button>
         </div>
       </div>

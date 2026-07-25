@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Flame, Sparkles, Mic, AlertCircle, ArrowRight } from 'lucide-react';
+import { Flame, Sparkles, Mic, AlertCircle } from 'lucide-react';
 import { triggerFireworks, playPopSound } from '../utils/effects';
 
 export default function BirthdayCakeSection({ onNextPage }) {
@@ -37,6 +37,13 @@ export default function BirthdayCakeSection({ onNextPage }) {
     setCandlesBlown(true);
     playPopSound();
     triggerFireworks();
+
+    // Automatically transition to Page 3 (Greeting Card & Photos) after 1.5s delay!
+    setTimeout(() => {
+      if (onNextPage) {
+        onNextPage();
+      }
+    }, 1600);
   };
 
   // Start Web Audio API Microphone Volume/Blow Detection
@@ -209,18 +216,13 @@ export default function BirthdayCakeSection({ onNextPage }) {
             )}
           </div>
         ) : (
-          <div className="bg-rose-500/10 border border-rose-300 p-6 rounded-2xl max-w-lg mx-auto animate-fade-in shadow-sm space-y-4">
+          <div className="bg-rose-500/10 border border-rose-300 p-6 rounded-2xl max-w-lg mx-auto animate-fade-in shadow-sm space-y-3">
             <p className="font-handwriting text-3xl text-rose-700 text-glow">
-              "May all your wildest dreams & happiest wishes come true!"
+              "Wish Granted! Opening your Birthday Card... 💖"
             </p>
-            
-            <button
-              onClick={onNextPage}
-              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-bold text-base shadow-lg shadow-rose-500/30 transition-all flex items-center justify-center space-x-2 animate-pulse"
-            >
-              <span>Read My Birthday Greeting Card & Photos 💌</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <p className="text-slate-600 text-xs uppercase tracking-wider font-semibold animate-pulse">
+              ✨ Fireworks Celebration Unlocked! ✨
+            </p>
           </div>
         )}
       </div>
