@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Feather } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { birthdayData } from '../config/birthdayData';
 
 export default function GreetingCardSection() {
@@ -16,17 +16,17 @@ export default function GreetingCardSection() {
       <div className="text-center">
         <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
           <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>Page 3 • Birthday Greeting & Memories</span>
+          <span>For My Special Queen</span>
         </div>
         <h2 className="font-serif text-3xl sm:text-6xl font-bold text-rose-950 mb-2">
-          Happy Birthday, My Queen! 💖
+          Happy Birthday, My Love! 💖
         </h2>
         <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">
           Surrounded by our photos and a heartfelt birthday message written just for you.
         </p>
       </div>
 
-      {/* TOP PHOTOS GRID (Surrounding the top of the letter) */}
+      {/* TOP PHOTOS GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {topPhotos.map((item) => (
           <div
@@ -57,11 +57,6 @@ export default function GreetingCardSection() {
         <div className="absolute top-0 right-0 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="bg-white/95 border border-rose-200 p-6 md:p-10 rounded-2xl relative shadow-inner">
-          <div className="flex items-center space-x-2 text-rose-700 mb-6">
-            <Feather className="w-5 h-5 text-rose-500" />
-            <span className="text-xs uppercase tracking-widest font-bold">Handwritten Birthday Message</span>
-          </div>
-
           <h3 className="font-handwriting text-3xl md:text-5xl font-bold text-rose-700 mb-6 text-glow">
             {letter.salutation}
           </h3>
@@ -83,7 +78,7 @@ export default function GreetingCardSection() {
         </div>
       </div>
 
-      {/* BOTTOM PHOTOS GRID (Surrounding the bottom of the letter) */}
+      {/* BOTTOM PHOTOS GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {bottomPhotos.map((item) => (
           <div
