@@ -33,13 +33,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 relative font-sans selection:bg-rose-500 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 text-slate-800 relative font-sans selection:bg-rose-500 selection:text-white">
       {/* Subtle Floating Ambient Hearts Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-20">
-        <div className="absolute top-1/4 left-10 text-rose-500 animate-float text-4xl">💖</div>
-        <div className="absolute top-2/3 right-12 text-pink-500 animate-float text-3xl" style={{ animationDelay: '2s' }}>✨</div>
-        <div className="absolute bottom-1/4 left-1/3 text-rose-400 animate-float text-5xl" style={{ animationDelay: '4s' }}>💕</div>
-        <div className="absolute top-1/3 right-1/4 text-purple-400 animate-float text-3xl" style={{ animationDelay: '1s' }}>🌟</div>
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-30">
+        <div className="absolute top-1/4 left-10 text-rose-400 animate-float text-4xl">💖</div>
+        <div className="absolute top-2/3 right-12 text-pink-400 animate-float text-3xl" style={{ animationDelay: '2s' }}>✨</div>
+        <div className="absolute bottom-1/4 left-1/3 text-rose-500 animate-float text-5xl" style={{ animationDelay: '4s' }}>💕</div>
+        <div className="absolute top-1/3 right-1/4 text-purple-400 animate-float text-3xl" style={{ animationDelay: '1s' }}>🌸</div>
       </div>
 
       {/* Unboxing Entrance Modal */}
@@ -58,19 +58,19 @@ export default function App() {
         <main className="flex-grow max-w-7xl mx-auto w-full px-4 pt-6 pb-20 space-y-12">
           {/* Hero Banner Header */}
           <section className="text-center py-10 md:py-16">
-            <div className="inline-flex items-center space-x-2 bg-rose-500/10 border border-rose-500/30 px-4 py-1.5 rounded-full text-rose-300 text-xs font-semibold uppercase tracking-wider mb-4 animate-bounce-soft">
-              <Sparkles className="w-4 h-4 text-amber-300" />
+            <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-600 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm animate-bounce-soft">
+              <Sparkles className="w-4 h-4 text-amber-500" />
               <span>Celebrating My Queen's Birthday</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-4">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-4">
               Happy Birthday, <br />
-              <span className="font-handwriting text-5xl sm:text-7xl md:text-8xl text-rose-400 text-glow">
+              <span className="font-handwriting text-5xl sm:text-7xl md:text-8xl text-rose-600 text-glow">
                 {birthdayData.birthdayGirl.name}! 👑
               </span>
             </h1>
 
-            <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
               Welcome to your special birthday website experience! Filled with our favorite memories, romantic interactive gifts, and endless love.
             </p>
           </section>
@@ -84,8 +84,8 @@ export default function App() {
           ) : (
             <div className="space-y-16 animate-fade-in">
               {/* Unlocked Badge Banner */}
-              <div className="max-w-xl mx-auto text-center bg-rose-500/15 border border-rose-500/40 p-4 rounded-2xl">
-                <p className="text-xs uppercase tracking-widest text-rose-300 font-bold flex items-center justify-center space-x-1">
+              <div className="max-w-xl mx-auto text-center bg-rose-500/10 border border-rose-400/40 p-4 rounded-2xl shadow-sm">
+                <p className="text-xs uppercase tracking-widest text-rose-700 font-bold flex items-center justify-center space-x-1">
                   <span>🎉 MEMORY CHALLENGE PASSED! ALL SECTIONS UNLOCKED! 🎉</span>
                 </p>
               </div>

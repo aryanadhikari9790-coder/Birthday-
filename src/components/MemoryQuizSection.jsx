@@ -95,14 +95,14 @@ export default function MemoryQuizSection({ onQuizComplete, addKiss }) {
         ))}
       </div>
 
-      <div className="glass-card p-6 md:p-8 rounded-3xl border-rose-500/40 relative overflow-hidden shadow-2xl">
+      <div className="glass-card p-6 md:p-8 rounded-3xl border-rose-300 relative overflow-hidden shadow-xl">
         {/* Glow corner */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-rose-500/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-48 h-48 bg-rose-200/50 rounded-full blur-2xl pointer-events-none" />
 
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-2">
-            <Key className="w-5 h-5 text-rose-400" />
-            <span className="text-xs uppercase tracking-widest font-bold text-rose-300">
+            <Key className="w-5 h-5 text-rose-500" />
+            <span className="text-xs uppercase tracking-widest font-bold text-rose-700">
               Memory Challenge • Step {currentStep + 1} of {questions.length}
             </span>
           </div>
@@ -115,19 +115,19 @@ export default function MemoryQuizSection({ onQuizComplete, addKiss }) {
                   i === currentStep
                     ? 'w-6 bg-rose-500'
                     : i < currentStep
-                    ? 'w-2 bg-rose-400/50'
-                    : 'w-2 bg-slate-800'
+                    ? 'w-2 bg-rose-300'
+                    : 'w-2 bg-rose-100'
                 }`}
               />
             ))}
           </div>
         </div>
 
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+        <h3 className="text-xl md:text-2xl font-bold text-rose-950 mb-2">
           {currentQ.question}
         </h3>
-        <p className="text-slate-400 text-xs md:text-sm mb-6 flex items-center space-x-1">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+        <p className="text-slate-600 text-xs md:text-sm mb-6 flex items-center space-x-1 font-medium">
+          <Sparkles className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
           <span>Hint: {currentQ.hint}</span>
         </p>
 
@@ -139,19 +139,19 @@ export default function MemoryQuizSection({ onQuizComplete, addKiss }) {
               value={inputAnswer}
               onChange={(e) => setInputAnswer(e.target.value)}
               placeholder="Type your memory answer here..."
-              className="w-full bg-slate-900/80 border border-slate-700 focus:border-rose-500 rounded-2xl px-5 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500/30 transition-all text-sm"
+              className="w-full bg-white/90 border border-rose-200 focus:border-rose-500 rounded-2xl px-5 py-3.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all text-sm font-medium shadow-inner"
             />
           </div>
 
           {errorMsg && (
-            <div className="flex items-center space-x-2 text-rose-400 text-xs bg-rose-500/10 p-3 rounded-xl border border-rose-500/20">
+            <div className="flex items-center space-x-2 text-rose-600 text-xs bg-rose-50 p-3 rounded-xl border border-rose-200">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <span>{errorMsg}</span>
             </div>
           )}
 
           {skipNotice && (
-            <div className="flex items-center space-x-2 text-pink-300 text-xs bg-pink-500/20 p-3 rounded-xl border border-pink-500/30 animate-pulse">
+            <div className="flex items-center space-x-2 text-rose-800 text-xs bg-pink-100 p-3 rounded-xl border border-pink-300 animate-pulse font-semibold">
               <span className="text-base">😘</span>
               <span>{skipNotice}</span>
             </div>
@@ -161,7 +161,7 @@ export default function MemoryQuizSection({ onQuizComplete, addKiss }) {
             {/* Submit Answer */}
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-sm shadow-lg shadow-rose-500/30 transition-all flex items-center justify-center space-x-2"
+              className="w-full py-3.5 px-4 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-sm shadow-md shadow-rose-500/20 transition-all flex items-center justify-center space-x-2"
             >
               <span>Unlock Memory</span>
               <ArrowRight className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default function MemoryQuizSection({ onQuizComplete, addKiss }) {
             <button
               type="button"
               onClick={handleKissToSkip}
-              className="w-full py-3.5 px-4 rounded-xl bg-pink-500/20 hover:bg-pink-500/30 border border-pink-500/40 text-pink-300 hover:text-white font-semibold text-sm transition-all flex items-center justify-center space-x-2 group"
+              className="w-full py-3.5 px-4 rounded-xl bg-pink-100 hover:bg-pink-200 border border-pink-300 text-pink-700 hover:text-pink-800 font-semibold text-sm transition-all flex items-center justify-center space-x-2 group shadow-sm"
             >
               <span className="text-lg group-hover:scale-125 transition-transform duration-200">💋</span>
               <span>Blow a Kiss to Skip (+1 Kiss)</span>

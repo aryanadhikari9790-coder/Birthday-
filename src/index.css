@@ -4,11 +4,11 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(244, 63, 94, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    box-shadow: 0 10px 30px -5px rgba(244, 63, 94, 0.12), 0 4px 12px 0 rgba(251, 113, 133, 0.08);
   }
 
   .glass-card-hover {
@@ -16,16 +16,16 @@
   }
   .glass-card-hover:hover {
     border-color: rgba(244, 63, 94, 0.5);
-    box-shadow: 0 12px 40px 0 rgba(244, 63, 94, 0.25);
+    box-shadow: 0 15px 35px -5px rgba(244, 63, 94, 0.22), 0 6px 16px 0 rgba(251, 113, 133, 0.12);
     transform: translateY(-4px);
   }
 
   .text-glow {
-    text-shadow: 0 0 12px rgba(244, 63, 94, 0.6), 0 0 24px rgba(244, 63, 94, 0.4);
+    text-shadow: 0 0 12px rgba(244, 63, 94, 0.3), 0 0 20px rgba(244, 63, 94, 0.2);
   }
 
   .text-glow-gold {
-    text-shadow: 0 0 12px rgba(251, 191, 36, 0.6), 0 0 24px rgba(251, 191, 36, 0.4);
+    text-shadow: 0 0 12px rgba(217, 119, 6, 0.3), 0 0 20px rgba(245, 158, 11, 0.2);
   }
 
   .perspective-1000 {
@@ -91,17 +91,17 @@
   transform-origin: bottom center;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar for Pinkish Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #fff1f2;
 }
 ::-webkit-scrollbar-thumb {
   background: #f43f5e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #fb7185;
+  background: #e11d48;
 }
