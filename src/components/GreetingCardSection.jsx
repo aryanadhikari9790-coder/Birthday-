@@ -1,58 +1,65 @@
 import React from 'react';
-import { Heart, Sparkles, Feather } from 'lucide-react';
+import { Sparkles, Feather } from 'lucide-react';
 import { birthdayData } from '../config/birthdayData';
 
 export default function GreetingCardSection() {
   const letter = birthdayData.mainWishLetter;
-  const polaroids = birthdayData.polaroids;
+  const photos = birthdayData.polaroids;
+
+  // Split photos around the letter (4 top, 4 bottom)
+  const topPhotos = photos.slice(0, 4);
+  const bottomPhotos = photos.slice(4);
 
   return (
     <div className="min-h-screen py-10 px-4 max-w-6xl mx-auto space-y-12 animate-fade-in relative z-10">
-      {/* Top Header */}
+      {/* Header */}
       <div className="text-center">
-        <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+        <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
           <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>Page 3 • Your Greeting Card & Photos</span>
+          <span>Page 3 • Birthday Greeting & Memories</span>
         </div>
-        <h2 className="font-serif text-3xl sm:text-6xl font-bold text-rose-950 mb-3">
-          With All My Love 💖
+        <h2 className="font-serif text-3xl sm:text-6xl font-bold text-rose-950 mb-2">
+          Happy Birthday, My Queen! 💖
         </h2>
         <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">
-          Surrounded by our favorite moments, photos, and a handwritten letter written just for you.
+          Surrounded by our photos and a heartfelt birthday message written just for you.
         </p>
       </div>
 
-      {/* Top Photo Gallery Banner */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {polaroids.map((item, idx) => (
-          <div key={item.id} className="bg-white p-3 rounded-2xl shadow-md border border-rose-100 transform hover:-translate-y-1 transition-transform duration-300">
-            <div className="w-full h-44 overflow-hidden rounded-xl bg-slate-100">
+      {/* TOP PHOTOS GRID (Surrounding the top of the letter) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {topPhotos.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div className="w-full h-48 overflow-hidden rounded-xl bg-rose-50 border border-rose-100">
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-center pt-2">
-              <h5 className="font-handwriting text-xl font-bold text-slate-800">
+            <div className="text-center px-1 py-1">
+              <h4 className="font-handwriting text-2xl font-bold text-slate-800">
                 {item.title}
-              </h5>
-              <p className="text-[11px] text-rose-600 font-semibold truncate">
-                {item.date}
+              </h4>
+              <p className="text-xs text-rose-700 font-medium leading-snug">
+                {item.caption}
               </p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Main Center Greeting Letter */}
-      <div className="glass-card p-8 md:p-12 rounded-3xl border-rose-300 relative overflow-hidden shadow-2xl space-y-8">
+      {/* CENTER GREETING LETTER CARD */}
+      <div className="glass-card p-8 md:p-12 rounded-3xl border-rose-300 relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="bg-white/95 border border-rose-200 p-6 md:p-10 rounded-2xl relative shadow-inner">
           <div className="flex items-center space-x-2 text-rose-700 mb-6">
             <Feather className="w-5 h-5 text-rose-500" />
-            <span className="text-xs uppercase tracking-widest font-bold">Personal Letter</span>
+            <span className="text-xs uppercase tracking-widest font-bold">Handwritten Birthday Message</span>
           </div>
 
           <h3 className="font-handwriting text-3xl md:text-5xl font-bold text-rose-700 mb-6 text-glow">
@@ -76,28 +83,30 @@ export default function GreetingCardSection() {
         </div>
       </div>
 
-      {/* Bottom Memory Cards with Secret Notes */}
-      <div className="space-y-6">
-        <div className="flex items-center justify-center space-x-2 text-rose-800">
-          <Heart className="w-5 h-5 text-rose-500 fill-rose-500" />
-          <h4 className="font-serif text-2xl font-bold">Special Notes Behind Our Memories 📸</h4>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {polaroids.map((item) => (
-            <div key={item.id} className="glass-card p-5 rounded-2xl border border-rose-200 flex items-center space-x-4">
+      {/* BOTTOM PHOTOS GRID (Surrounding the bottom of the letter) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {bottomPhotos.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div className="w-full h-48 overflow-hidden rounded-xl bg-rose-50 border border-rose-100">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-24 h-24 rounded-xl object-cover border border-rose-200 flex-shrink-0"
+                className="w-full h-full object-cover"
               />
-              <div>
-                <h5 className="font-bold text-rose-950 text-base">{item.title}</h5>
-                <p className="text-rose-700 font-handwriting text-xl mt-1">"{item.secretNote}"</p>
-              </div>
             </div>
-          ))}
-        </div>
+            <div className="text-center px-1 py-1">
+              <h4 className="font-handwriting text-2xl font-bold text-slate-800">
+                {item.title}
+              </h4>
+              <p className="text-xs text-rose-700 font-medium leading-snug">
+                {item.caption}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
