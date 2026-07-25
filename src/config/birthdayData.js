@@ -7,10 +7,12 @@
 export const birthdayData = {
   // 👑 HER DETAILS (Change these to her name and nickname!)
   birthdayGirl: {
-    name: "My Princess",             // EDIT: Her full name
+    name: "My Princess",             // EDIT: Her name (e.g. Punturu / Princess)
     nickname: "Babe",                 // EDIT: Her nickname
-    age: "22",                        // EDIT: Her age
-    birthDate: "2026-07-25",          // EDIT: Her birthday date
+    age: "24",                        // EDIT: Her age
+    birthDate: "2026-07-26",          // EDIT: Her birthday date
+    // EDIT THIS UNBOXING SUBTITLE TEXT BELOW:
+    unboxingSubtitle: "I created a special interactive birthday gift filled with memories and love just for you! Tap below to unwrap your gift.",
     favoriteColor: "#f43f5e",
   },
 
@@ -79,7 +81,6 @@ export const birthdayData = {
     paragraphs: [
       "Happy Birthday, my love! Today is all about celebrating the day the world was blessed with your wonderful presence.",
       " Today you turn 24 baby, July 26 punturu 25 vanthyo 26 raixa birthday😂 mero baby aja bata ek Barsa Budi vayo hai😂🤗😍 sadhai malai timi vanda ma xito budo hunxu vantyo aja bata jhan ek barsa budo vayo😂😜😍hami boleko Maile timlai first choti I love you vaneko😂😘 (25 December ) pani 7 months complete vayexa don’t know yo last ko seven months ma Maile timilai kaile khusi banaye hola kaile sad but my intentions were always to make you feel special and happy. Timi hasda Tyo face ma aaune charm ra glow nai xuttai hunxa so always smile 😊 Timro eye roll 🙄🙄 uff 🤭🫣Timro kunai kunai cute dumb Harkat 🫠 all in k e cute package hau timi thaxa baby🥰😘 Timro persona Timro ada sabma ma fida 🫠🥰😘 Timro cute innocent face ma Tyo smile Timro feakles everything makes you the perfect one . Timi kaile Kai insecure hunxa ni that only your vhram ( word nai birsiye English ma🤭😂) timi sadhai hasnu khusi Rahanu mero puntu and I will always give my best to make you happy. Timlai thaxa Last ko 6-7 months are the best moments of my life and you are the most precious one in those. Birthday wish garda garda kata pugexu feri😂😍 now my baby has grown a year old may this year bring you all the happiness and peace in your life . Mero puntu lai aba Ali Kati responsibility thapiyo hai aba gharkale aja Budi vayau vanxan aja badi kam gara vanxan😂🤗 but never take that to your heart sometimes Risako bela vaneko kura people don’t mean that especially when the family says. Timi life sadhai agi badhnu Timro bucket list ko sabai kura pura garnu, yes we will do those together but just don’t step back in your life achieve all the happiness and the dream you dreamt of.Life ma kaile happy moments aaula kaile Kye kura le Timro man dukhla but I will make sure that I am always with you in you up and downs and will never be the reason for you tears. I will be always be there to make the lemonade from those lemons that life will give to make you the better version of your self . Always give your best to the life as you always do and never give up on you . I will always be your strongest shoulder to lean.  Once again happiest birthday 🎉 🎂 and to my baby❤️ my life 😘my punturu🥰 my princess💖🎂✨"
-      
     ],
     signature: "Forever Yours,",
     author: "Your Loving manchild😂 boyfriend ❤️"

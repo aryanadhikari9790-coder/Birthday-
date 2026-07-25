@@ -29,7 +29,7 @@ export default function UnboxingModal({ onOpenGift }) {
         </h2>
 
         <p className="text-slate-600 text-sm mb-8 font-medium">
-          I created a special interactive birthday gift filled with memories and love just for you! Tap below to unwrap your gift.
+          {birthdayData.birthdayGirl.unboxingSubtitle}
         </p>
 
         {/* 3D Gift Box Visual */}
