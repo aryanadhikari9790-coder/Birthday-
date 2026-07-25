@@ -23,13 +23,13 @@ export default function GreetingCardSection() {
         {topPhotos.map((item) => (
           <div
             key={item.id}
-            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300"
+            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-between"
           >
-            <div className="w-full h-48 overflow-hidden rounded-xl bg-rose-50 border border-rose-100">
+            <div className="w-full h-64 overflow-hidden rounded-xl bg-rose-50/50 border border-rose-100 flex items-center justify-center p-1">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain rounded-lg"
               />
             </div>
             <div className="text-center px-1 py-1">
@@ -75,13 +75,13 @@ export default function GreetingCardSection() {
         {bottomPhotos.map((item) => (
           <div
             key={item.id}
-            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300"
+            className="bg-white p-3 rounded-2xl shadow-lg border border-rose-200 space-y-2 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-between"
           >
-            <div className="w-full h-48 overflow-hidden rounded-xl bg-rose-50 border border-rose-100">
+            <div className="w-full h-64 overflow-hidden rounded-xl bg-rose-50/50 border border-rose-100 flex items-center justify-center p-1">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain rounded-lg"
               />
             </div>
             <div className="text-center px-1 py-1">
