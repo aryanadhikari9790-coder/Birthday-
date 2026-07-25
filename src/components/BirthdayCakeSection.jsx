@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Flame, Sparkles, Mic, AlertCircle } from 'lucide-react';
+import { Flame, Mic, AlertCircle } from 'lucide-react';
 import { triggerFireworks, playPopSound } from '../utils/effects';
 
 export default function BirthdayCakeSection({ onNextPage }) {
@@ -105,13 +105,8 @@ export default function BirthdayCakeSection({ onNextPage }) {
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-400/40 px-4 py-1.5 rounded-full text-amber-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>Page 2 • Make a Wish 🎂</span>
-        </div>
-
         <h2 className="font-serif text-3xl md:text-5xl font-bold text-rose-950 mb-3">
-          Blow Out Your Candles! 🌬️🎂
+          Blow Out Your Birthday Candles! 🌬️🎂
         </h2>
         <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto mb-8 font-medium">
           Enable your microphone below and <strong className="text-rose-600">blow air into your mic</strong> to extinguish the candles!

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Gift, Heart, Sparkles } from 'lucide-react';
+import { Gift, Heart } from 'lucide-react';
 import { birthdayData } from '../config/birthdayData';
 import { triggerConfetti, playPopSound } from '../utils/effects';
 
@@ -21,12 +21,6 @@ export default function UnboxingModal({ onOpenGift }) {
       <div className={`relative max-w-md w-full glass-card p-8 md:p-10 rounded-3xl text-center border-rose-300 shadow-2xl transform transition-all duration-700 ${
         isOpening ? 'scale-110 opacity-0 -translate-y-12' : 'scale-100 opacity-100'
       }`}>
-        {/* Animated Badge */}
-        <div className="inline-flex items-center space-x-2 bg-rose-500/10 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>Page 1 • A Special Digital Gift</span>
-        </div>
-
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-rose-950 mb-2">
           Happy Birthday, <br />
           <span className="font-handwriting text-4xl md:text-5xl text-rose-600 text-glow">

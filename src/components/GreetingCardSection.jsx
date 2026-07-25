@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 import { birthdayData } from '../config/birthdayData';
 
 export default function GreetingCardSection() {
@@ -14,16 +13,9 @@ export default function GreetingCardSection() {
     <div className="min-h-screen py-10 px-4 max-w-6xl mx-auto space-y-12 animate-fade-in relative z-10">
       {/* Header */}
       <div className="text-center">
-        <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-700 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>For My Special Queen</span>
-        </div>
         <h2 className="font-serif text-3xl sm:text-6xl font-bold text-rose-950 mb-2">
           Happy Birthday, My Love! 💖
         </h2>
-        <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">
-          Surrounded by our photos and a heartfelt birthday message written just for you.
-        </p>
       </div>
 
       {/* TOP PHOTOS GRID */}
