@@ -105,12 +105,9 @@ export default function BirthdayCakeSection({ onNextPage }) {
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
-        <h2 className="font-serif text-3xl md:text-5xl font-bold text-rose-950 mb-3">
+        <h2 className="font-serif text-3xl md:text-5xl font-bold text-rose-950 mb-6">
           Blow Out Your Birthday Candles! 🌬️🎂
         </h2>
-        <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto mb-8 font-medium">
-          Enable your microphone below and <strong className="text-rose-600">blow air into your mic</strong> to extinguish the candles!
-        </p>
 
         {/* Real Microphone Status Bar */}
         {!candlesBlown && isListening && (
