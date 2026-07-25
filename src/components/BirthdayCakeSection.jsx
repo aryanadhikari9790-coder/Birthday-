@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Flame, Sparkles, Mic, AlertCircle } from 'lucide-react';
+import { Flame, Sparkles, Mic, AlertCircle, ArrowRight } from 'lucide-react';
 import { triggerFireworks, playPopSound } from '../utils/effects';
 
-export default function BirthdayCakeSection() {
+export default function BirthdayCakeSection({ onComplete }) {
   const [candlesBlown, setCandlesBlown] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [blowLevel, setBlowLevel] = useState(0); // 0 to 100 volume meter
@@ -37,6 +37,10 @@ export default function BirthdayCakeSection() {
     setCandlesBlown(true);
     playPopSound();
     triggerFireworks();
+
+    if (onComplete) {
+      onComplete();
+    }
   };
 
   // Start Web Audio API Microphone Volume/Blow Detection
@@ -93,21 +97,21 @@ export default function BirthdayCakeSection() {
   };
 
   return (
-    <section className="my-16 px-4 max-w-4xl mx-auto text-center">
+    <section className="my-8 px-4 max-w-4xl mx-auto text-center">
       <div className="glass-card p-8 md:p-12 rounded-3xl border-rose-300 relative overflow-hidden shadow-xl">
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-200/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-400/40 px-4 py-1.5 rounded-full text-amber-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
           <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>Real Microphone Blow Detection 🎙️</span>
+          <span>Part 2 • Blow Your Candles 🎂</span>
         </div>
 
         <h2 className="font-serif text-3xl md:text-5xl font-bold text-rose-950 mb-3">
           Blow Out Your Birthday Candles! 🌬️🎂
         </h2>
         <p className="text-slate-600 text-sm md:text-base max-w-xl mx-auto mb-8 font-medium">
-          Enable your microphone below and <strong className="text-rose-600">blow air into your mic</strong> to blow out the candles just like a real birthday cake!
+          Enable your microphone below and <strong className="text-rose-600">blow air into your mic</strong> to blow out the candles and reveal your greeting card!
         </p>
 
         {/* Real Microphone Status Bar */}
@@ -209,12 +213,12 @@ export default function BirthdayCakeSection() {
             )}
           </div>
         ) : (
-          <div className="bg-rose-500/10 border border-rose-300 p-6 rounded-2xl max-w-lg mx-auto animate-fade-in shadow-sm">
-            <p className="font-handwriting text-3xl text-rose-700 text-glow mb-2">
+          <div className="bg-rose-500/10 border border-rose-300 p-6 rounded-2xl max-w-lg mx-auto animate-fade-in shadow-sm space-y-3">
+            <p className="font-handwriting text-3xl text-rose-700 text-glow">
               "May all your wildest dreams & happiest wishes come true!"
             </p>
             <p className="text-slate-600 text-xs uppercase tracking-wider font-semibold">
-              ✨ Real Blow Detected • Fireworks & Blessings Unlocked! ✨
+              ✨ Real Blow Detected • Greeting Card Unlocked Below! ✨
             </p>
           </div>
         )}

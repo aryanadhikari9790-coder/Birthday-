@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import UnboxingModal from './components/UnboxingModal';
-import MemoryQuizSection from './components/MemoryQuizSection';
 import BirthdayCakeSection from './components/BirthdayCakeSection';
-import LoveTimelineSection from './components/LoveTimelineSection';
-import PolaroidScrapbookSection from './components/PolaroidScrapbookSection';
-import OpenWhenEnvelopesSection from './components/OpenWhenEnvelopesSection';
-import LoveCouponsSection from './components/LoveCouponsSection';
-import WishLetterSection from './components/WishLetterSection';
+import GreetingCardSection from './components/GreetingCardSection';
 import MusicPlayer from './components/MusicPlayer';
 import Footer from './components/Footer';
 import { birthdayData } from './config/birthdayData';
-import { Sparkles, Heart } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function App() {
-  const [hasOpenedGift, setHasOpenedGift] = useState(false);
-  const [isQuizUnlocked, setIsQuizUnlocked] = useState(false);
-  const [kissCount, setKissCount] = useState(0);
+  // Step 1: Unboxing Modal
+  // Step 2: Candle Blowing
+  // Step 3: Greeting Card & Photos
+  const [currentStep, setCurrentStep] = useState(1);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
-  const addKiss = (amount = 1) => {
-    setKissCount((prev) => prev + amount);
+  const handleOpenGift = () => {
+    setCurrentStep(2); // Advance to Candle Blowing
+    setIsPlayingMusic(true); // Auto start music
   };
 
-  const handleOpenGift = () => {
-    setHasOpenedGift(true);
-    setIsPlayingMusic(true); // Auto start romantic music on unboxing
+  const handleCandlesBlownComplete = () => {
+    setCurrentStep(3); // Advance to Greeting Card & Photos
   };
 
   const toggleMusic = () => {
@@ -42,71 +38,46 @@ export default function App() {
         <div className="absolute top-1/3 right-1/4 text-purple-400 animate-float text-3xl" style={{ animationDelay: '1s' }}>🌸</div>
       </div>
 
-      {/* Unboxing Entrance Modal */}
-      {!hasOpenedGift && (
+      {/* Part 1: Unboxing Entrance Modal */}
+      {currentStep === 1 && (
         <UnboxingModal onOpenGift={handleOpenGift} />
       )}
 
-      {/* Main Website Experience */}
+      {/* Main Experience */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar
-          kissCount={kissCount}
+          kissCount={0}
           isPlayingMusic={isPlayingMusic}
           toggleMusic={toggleMusic}
         />
 
-        <main className="flex-grow max-w-7xl mx-auto w-full px-4 pt-6 pb-20 space-y-12">
-          {/* Hero Banner Header */}
-          <section className="text-center py-10 md:py-16">
+        <main className="flex-grow max-w-5xl mx-auto w-full px-4 pt-6 pb-20 space-y-12">
+          {/* Header */}
+          <section className="text-center py-8">
             <div className="inline-flex items-center space-x-2 bg-white/80 border border-rose-300 px-4 py-1.5 rounded-full text-rose-600 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm animate-bounce-soft">
               <Sparkles className="w-4 h-4 text-amber-500" />
-              <span>Celebrating My Queen's Birthday</span>
+              <span>Digital Birthday Gift</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-4">
+            <h1 className="font-serif text-4xl sm:text-6xl font-extrabold text-rose-950 tracking-tight mb-2">
               Happy Birthday, <br />
-              <span className="font-handwriting text-5xl sm:text-7xl md:text-8xl text-rose-600 text-glow">
+              <span className="font-handwriting text-5xl sm:text-7xl text-rose-600 text-glow">
                 {birthdayData.birthdayGirl.name}! 👑
               </span>
             </h1>
-
-            <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
-              Welcome to your special birthday website experience! Filled with our favorite memories, romantic interactive gifts, and endless love.
-            </p>
           </section>
 
-          {/* Gate 1: Memory Quiz Challenge */}
-          {!isQuizUnlocked ? (
-            <MemoryQuizSection
-              onQuizComplete={() => setIsQuizUnlocked(true)}
-              addKiss={addKiss}
-            />
-          ) : (
-            <div className="space-y-16 animate-fade-in">
-              {/* Unlocked Badge Banner */}
-              <div className="max-w-xl mx-auto text-center bg-rose-500/10 border border-rose-400/40 p-4 rounded-2xl shadow-sm">
-                <p className="text-xs uppercase tracking-widest text-rose-700 font-bold flex items-center justify-center space-x-1">
-                  <span>🎉 MEMORY CHALLENGE PASSED! ALL SECTIONS UNLOCKED! 🎉</span>
-                </p>
-              </div>
+          {/* Part 2: Virtual Birthday Cake & Blow Candles */}
+          {currentStep >= 2 && (
+            <div className="animate-fade-in">
+              <BirthdayCakeSection onComplete={handleCandlesBlownComplete} />
+            </div>
+          )}
 
-              {/* Section 2: Virtual Birthday Cake & Blow Candles */}
-              <BirthdayCakeSection />
-
-              {/* Section 3: Our Story Relationship Timeline */}
-              <LoveTimelineSection />
-
-              {/* Section 4: 3D Polaroid Scrapbook Photo Album */}
-              <PolaroidScrapbookSection />
-
-              {/* Section 5: Open When Digital Envelopes */}
-              <OpenWhenEnvelopesSection />
-
-              {/* Section 6: Claimable Romantic Love Coupons */}
-              <LoveCouponsSection />
-
-              {/* Section 7: Main Birthday Wish Letter */}
-              <WishLetterSection />
+          {/* Part 3: Birthday Greeting Card with Photos & Messages */}
+          {currentStep >= 3 && (
+            <div className="animate-fade-in">
+              <GreetingCardSection />
             </div>
           )}
         </main>
